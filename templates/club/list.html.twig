@@ -1,0 +1,18 @@
+<table border = '1'>
+    <tr>
+        <th>id</th>
+        <th>Réference</th>
+        <th>Date de création</th>
+        <th>Editer</th>
+
+    </tr>
+    {% for i in list %}
+    <tr>
+        <td>{{i.id}}</td>
+        <td>{{i.Ref}}</td>
+        <td>{{i.CreatedAt|date('Y-m-d H:i:s')}}</td>
+        <td><a class="btn btn-primary" href="{{path('club_mod',{'id':i.id})}}">Update</a>
+        <a class="btn btn-primary" href="{{path('club_del',{'id':i.id})}}">Suprimmer</a></td>
+    </tr>
+    {% endfor %}
+</table>
